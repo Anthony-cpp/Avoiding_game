@@ -1,0 +1,60 @@
+body{
+        background: #eee;
+     }
+
+	button.button1{
+		font-size: 2.0em;
+		font-weight: bold;
+		padding: 20px 30px;
+		background-color: #fff;
+		border: ridge;
+		color: #000;
+	}
+
+	button.button1:hover{
+		background-color: #f00;
+		border: ridge,#f00;
+		color: #fff;
+}	
+
+ 
+     #canvas {
+        width: 640px;
+        height: 480px;
+        background: #000;
+	margin: 20px; 
+	float: right;
+      }
+
+      #c_w{
+	width:640px;
+	margin:0 auto;
+
+      }
+
+      #buttons{
+	float: right;
+
+      }
+
+	h1{
+	font-size: 35px;
+	padding: 0px;
+	margin: 0px;
+	}
+
+     #ab{
+	font-size: 15px;
+	padding: 0px;
+	margin: 0px;
+	}
+
+     #ac{
+	font-size: 25px;
+	padding: 0px;
+	margin: 0px;
+       }
+
+     .b_1{
+	background-color: rgb(255, 0, 0, 0.2);
+	}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>Avoiding Game!</title>
+</head>
+<body>
+<h1>Avoiding Game!</h1>
+
+<div id="c_w"><canvas id="canvas"></canvas></div>
+
+<script type="text/javascript" src="main.js"></script>
+</br>
+<div id ="ac"><p id ="sc"></p></div>
+
+ <p id ="endless_t1">クエストモード</p>
+<button class="button1" type="button" id="b1" onclick="m1()">EASY</button>
+<button class="button1" type="button" id="b2" onclick="m2()">NORMAL</button>
+<button class="button1" type="button" id="b3" onclick="m3()">HARD</button>
+</br>
+ <p id ="endless_t2">エンドレスモード</p>
+<button class="button1" type="button" id="b4" onclick="m4()">ENDLESS</button>
+<button class="button1" type="button" id="b6" onclick="m6()">RANDOM</button>
+</br></br>
+
+<div id ="no">
+<div id ="ac"><p>ルール説明</p></div>
+<p>青い敵を上下のキーで避けて下さい。</p>
+<p>クエストモードはステージを攻略していくタイプのものです。</p>
+<p>エンドレスモードはミスをしないように高得点を狙うモードです。</p>
+<p>※うまくいかないことがあったら「F5」キーを押してください。</p>
+</br>
+<p>↓ステージ引継ぎのパスワードは下にいれて下さい。↓</p>
+</div>
+
+<div id ="pas">
+<div id ="ac">
+<form id="form1" action="#">
+            パスワード：<input type="text" id="password">
+            <input type="button" value="入力" onclick="check_pass()">
+</form>
+</div>
+</div>
+
+
+<div id ="ac">
+<p id="finish_mes">GAMEOVER</p>
+<p id="finish_mes_2">F5を押して再スタート</p>
+<p id="finish_score"></p>
+
+<p id="cfinish_mes">クリアおめでとう</p>
+<p id="cfinish_mes_2">F5を押して再スタート</p>
+<p id="cfinish_score"></p>
+</div>
+
+<!-- <input type="button" value="return" id="b5" onclick="m5()"> -->
+
+</body>
+</html>
