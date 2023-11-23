@@ -1,4 +1,4 @@
-﻿//??
+//??
 var p_x = 10 ,p_y = 70;
 	var i,score = 0,c,flag = 1,v = 0.5,t;
 	var a,b,x=180;
@@ -239,23 +239,6 @@ function game(){
 
 	}
 
-    if(mode_type == 999){
-        c_w.style.display = 'none';
-
-        document.getElementById("finish_mes").textContent ="自分は緑色の長方形です。上下キーで操作できます。天井や下に落ちてもゲームオーバーになりません。重力が働いています";
-        document.getElementById("finish_mes_2").textContent ="敵は青い長方形です。赤い壁は敵を見えにくくしますが当たりません。";
-        document.getElementById("finish_score").textContent ="ステージの説明";
-        document.getElementById("inst1").textContent ="ステージ1:通常のステージ";
-        document.getElementById("inst2").textContent ="ステージ2:壁が登場します。";
-        document.getElementById("inst3").textContent ="ステージ3:敵が速くやってきます。";
-        document.getElementById("inst4").textContent ="ステージ4:敵の速度は変わらず、壁が逆向きに動きます。";
-        document.getElementById("inst5").textContent ="ステージ5:時間経過でクリアです。";
-        document.getElementById("inst6").textContent ="ステージ6:最初よりも敵とぶつかる場所が敵側に移動します。";
-        document.getElementById("inst7").textContent ="ステージ7:自機が左右に動きます。";
-        document.getElementById("inst8").textContent ="ステージ8:敵が動かないので間を通って切り抜けましょう";
-        document.getElementById("inst_mes").textContent ="F5を押してタイトルへ";
-    }
-
 
 
 	let f_m = document.getElementById('finish_mes');
@@ -463,10 +446,6 @@ function hide_b_and_open_s(){
 	const displayOriginal_6 = b6.style.display;
 	b6.style.display = 'none';
 
-    var b999 = document.getElementById('b999');
-	const displayOriginal_999 = b999.style.display;
-	b999.style.display = 'none';
-
 	var et1 = document.getElementById('endless_t1');
 	const displayOriginal_et1 = et1.style.display;
 	et1.style.display = 'none';
@@ -539,16 +518,6 @@ function m6(){
 	hide_b_and_open_s();
 }
 
-function instruction(){
-    mode_type = 999;
-    flag = 0;
-	hide_b_and_open_s();
-
-    var b1 = document.getElementById('sc');
-	const displayOriginal = b1.style.display;
-	b1.style.display = "none";
-}
-
 /*function m5(){
 	mode_type = 5;
 	make_b_and_hide_s();
@@ -580,6 +549,7 @@ function draw(){
 	}
 
 	ctx.fillStyle = "rgb(255,0,0)";
+
 
 	ctx.fillStyle = "rgb(0,255,255)";
 
@@ -730,16 +700,8 @@ function enemy(){
 
 	draw();
 
-    Mode = "";
-    if(mode_type == 1) Mode = "EASY"; 
-    else if(mode_type == 2) Mode = "NORMAL"; 
-    else if(mode_type == 3) Mode = "HARD"; 
-    else if(mode_type == 4) Mode = "ENDLESS"; 
-    else if(mode_type == 6) Mode = "RANDOM"; 
-
-	if(mode_type <= 3 ) document.getElementById("sc").textContent = score + " " + Mode +" "+ "Stage" + flag;
-	else if(mode_type == 4 || mode_type == 6) document.getElementById("sc").textContent = all_score + " " + Mode +" "+ "Stage" + flag;
-
+	if(mode_type <= 3 ) document.getElementById("sc").textContent = score + " " + "Stage" + flag;
+	else if(mode_type != 5) document.getElementById("sc").textContent = all_score + " " + "Stage" + flag;
 
 	}
 
@@ -776,16 +738,9 @@ function enemy(){
 
 	}
 
-    Mode = "";
-    if(mode_type == 1) Mode = "EASY"; 
-    else if(mode_type == 2) Mode = "NORMAL"; 
-    else if(mode_type == 3) Mode = "HARD"; 
-    else if(mode_type == 4) Mode = "ENDLESS"; 
-    else if(mode_type == 6) Mode = "RANDOM"; 
-
-	if(mode_type <= 3 ) document.getElementById("sc").textContent = score + " " + Mode +" "+ "Stage" + flag;
-	else if(mode_type == 4 || mode_type == 6) document.getElementById("sc").textContent = all_score + " " + Mode +" "+ "Stage" + flag;
-
+	draw();
+	if(mode_type <= 3 ) document.getElementById("sc").textContent = score + " " + "Stage" + flag;
+	else if(mode_type != 5) document.getElementById("sc").textContent = all_score + " " + "Stage" + flag;
 
 	}
 }
@@ -811,7 +766,7 @@ function check(){
 	 if(p_x < 50 ) p_x += 0.125;
 	}
 
-	if(flag == 7){
+	if( flag == 7){
 
 	if( flag_s == 0 ){
 	  p_x += 0.07;
@@ -1228,21 +1183,21 @@ function count_5(){
 
 	 if(flag == 5){
 		if(mode_type == 1) score += 20;
-		if(mode_type == 2 || mode_type == 4 || mode_type == 6) score += 10;
+		if(mode_type == 2) score += 10;
 		if(mode_type == 3) score += 5;
 
 		if(mode_type == 1) all_score += 20;
-		if(mode_type == 2 || mode_type == 4 || mode_type == 6) all_score += 10;
+		if(mode_type == 2) all_score += 10;
 		if(mode_type == 3) all_score += 5;
 		}
 
 	 if(flag == 8){
 		if(mode_type == 1) score += 20;
-		if(mode_type == 2 || mode_type == 4 || mode_type == 6) score += 10;
+		if(mode_type == 2) score += 10;
 		if(mode_type == 3) score += 5;
 
 		if(mode_type == 1) all_score += 20;
-		if(mode_type == 2 || mode_type == 4 || mode_type == 6) all_score += 10;
+		if(mode_type == 2) all_score += 10;
 		if(mode_type == 3) all_score += 5;
 		}
 	}
