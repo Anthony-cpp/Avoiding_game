@@ -1183,21 +1183,21 @@ function count_5(){
 
 	 if(flag == 5){
 		if(mode_type == 1) score += 20;
-		if(mode_type == 2) score += 10;
+		if(mode_type % 2 == 0) score += 10;
 		if(mode_type == 3) score += 5;
 
 		if(mode_type == 1) all_score += 20;
-		if(mode_type == 2) all_score += 10;
+		if(mode_type % 2 == 0) all_score += 10;
 		if(mode_type == 3) all_score += 5;
 		}
 
 	 if(flag == 8){
 		if(mode_type == 1) score += 20;
-		if(mode_type == 2) score += 10;
+		if(mode_type % 2 == 0) score += 10;
 		if(mode_type == 3) score += 5;
 
 		if(mode_type == 1) all_score += 20;
-		if(mode_type == 2) all_score += 10;
+		if(mode_type % 2 == 0) all_score += 10;
 		if(mode_type == 3) all_score += 5;
 		}
 	}
